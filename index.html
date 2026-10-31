@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Bruna Bacher | Veterinária em domicílio em Limeira</title>
+    <meta name="description" content="Cuidado veterinário para cães e gatos no conforto de casa em Limeira. Consulta, vacinação domiciliar e medicina felina com a médica-veterinária Bruna Bacher.">
+    
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="SUA_TAG_DE_VERIFICACAO_AQUI" />
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_ID_AQUI"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SEU_ID_AQUI');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rosa-queimado: #C98F8B; /* Afeto / Destaques / CTAs */
+            --creme: #F7F1E8;       /* Fundo Principal */
+            --verde-salvia: #A3A89B; /* Saúde / Detalhes */
+            --taupe: #8B7568;        /* Confiança / Textos Principais */
+            --bege: #D9C1B0;         /* Acolhimento / Fundos Secundários */
+            --branco: #FFFFFF;
+            
+            /* Tipografia */
+            --font-titulo: 'Playfair Display', serif;
+            --font-texto: 'Lato', sans-serif;
+            --font-detalhe: 'Allura', cursive;
+            
+            /* Espaçamentos */
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            
+            /* Sombras e Bordas */
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(139, 117, 104, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-texto);
+            color: var(--taupe);
+            background-color: var(--creme);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-titulo);
+            color: var(--taupe);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        
+        p { margin-bottom: var(--spacing-sm); }
+        
+        .allura-text {
+            font-family: var(--font-detalhe);
+            font-size: 2.5rem;
+            color: var(--rosa-queimado);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            color: var(--rosa-queimado);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .bg-bege { background-color: var(--bege); }
+        .bg-creme { background-color: var(--creme); }
+        .bg-branco { background-color: var(--branco); }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--rosa-queimado);
+            color: var(--branco);
+            font-family: var(--font-texto);
+            font-weight: 700;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(201, 143, 139, 0.3);
+            border: 2px solid var(--rosa-queimado);
+            cursor: pointer;
+            min-height: 44px; /* Acessibilidade */
+            min-width: 44px;
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: transparent;
+            color: var(--rosa-queimado);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 143, 139, 0.4);
+            outline: none;
+        }
+
+        .text-center { text-align: center; }
+
+        .image-placeholder {
+            background-color: var(--verde-salvia);
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border-radius: inherit; /* Garante que herde o border-radius da div pai */
+            overflow: hidden; /* Corta a imagem caso passe dos cantos arredondados */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Faz a imagem preencher toda a div pai dinamicamente */
+            object-position: top;
+            display: block;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--creme);
+            padding: 1.2rem 0;
+            position: relative;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(139, 117, 104, 0.1);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-header {
+            max-width: 200px; /* Tamanho ajustável para o header */
+            height: auto;
+            display: block;
+        }
+        .logo-text {
+            font-family: var(--font-titulo);
+            font-size: 1.5rem;
+            color: var(--taupe);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .logo-sub {
+            display: block;
+            font-family: var(--font-texto);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: var(--spacing-md) 0 var(--spacing-xl);
+        }
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        .hero-text .assinatura {
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+        .hero-image-wrapper {
+            border-radius: var(--border-radius) 100px var(--border-radius) var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* --- Atendimento em Casa --- */
+        .atendimento-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        .beneficios-list {
+            list-style: none;
+            margin-top: var(--spacing-md);
+        }
+        .beneficios-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .beneficios-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--verde-salvia);
+            font-weight: bold;
+        }
+
+        /* --- Serviços --- */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        .card {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-bottom: 4px solid var(--verde-salvia);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Vacinação --- */
+        .fluxo-vacinacao {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        .fluxo-item {
+            background: var(--creme);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid var(--bege);
+        }
+        .fluxo-item span {
+            display: block;
+            font-family: var(--font-detalhe);
+            color: var(--rosa-queimado);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .vacinacao-info {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* --- Gatos --- */
+        .gatos-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        /* --- Quem é Bruna --- */
+        .perfil-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        .perfil-image {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            box-shadow: var(--box-shadow);
+            border: 5px solid var(--creme);
+        }
+
+        /* --- Como Funciona --- */
+        .passos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        .passo {
+            text-align: center;
+        }
+        .passo-numero {
+            background: var(--verde-salvia);
+            color: var(--branco);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-family: var(--font-titulo);
+            margin: 0 auto 1rem;
+        }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: var(--branco);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-titulo);
+            font-size: 1.2rem;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--rosa-queimado);
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* --- Avaliações (Estrutura) --- */
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: var(--spacing-lg);
+        }
+        .depoimento-card {
+            background: var(--creme);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-style: italic;
+        }
+        .estrelas {
+            color: var(--rosa-queimado);
+            margin-bottom: 1rem;
+        }
+
+        /* --- CTA Final --- */
+        .cta-final {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--taupe);
+            color: var(--creme);
+            text-align: center;
+            padding: var(--spacing-md) 0;
+            font-size: 0.9rem;
+        }
+        .logo-footer {
+            max-width: 150px; /* Tamanho ajustável para o footer */
+            height: auto;
+            margin: 0 auto 1rem auto; /* Centraliza e dá margem inferior */
+            display: block;
+        }
+        footer a {
+            color: var(--bege);
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        footer a:hover {
+            color: var(--branco);
+        }
+         .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        /* --- WhatsApp Flutuante --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--verde-salvia);
+            color: var(--branco);
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: var(--taupe);
+        }
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: currentColor;
+        }
+
+        /* Media Queries (Tablet & Desktop) */
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; }
+            
+            .hero-container,
+            .atendimento-grid,
+            .gatos-container,
+            .perfil-container {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .hero-text { padding-right: 2rem; }
+            .gatos-text { padding-left: 2rem; order: 2; }
+            .gatos-image { order: 1; }
+            
+            .servicos-grid,
+            .depoimentos-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .fluxo-vacinacao,
+            .passos-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .vacinacao-info {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+     <header>
+        <div class="container header-content">
+            <a href="#" class="logo-text">
+                Bruna Bacher
+                <span class="logo-sub">Médica-Veterinária | CRMV-SP 40545</span>
+            </a>
+            <a href="#" class="logo-link" aria-label="Voltar ao início">
+                <!-- SUBSTITUA "caminho-para-seu-logo-preto.png" pelo link real da sua imagem -->
+                <img src="./logo-branco.PNG" alt="Logo Bruna Bacher Casa e Afeto" class="logo-header">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Dobra 1: Hero -->
+        <section class="hero bg-creme">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <span class="allura-text">Casa & Afeto</span>
+                    <h1>Veterinária em domicílio em Limeira</h1>
+                    <p>Cuidado veterinário para cães e gatos no conforto de casa, com atenção, carinho e acompanhamento individualizado.</p>
+                    <span class="assinatura">Bruna Bacher | Médica-Veterinária | CRMV-SP 40545</span>
+                    <br>
+                    <a href="https://wa.me/5519981166281?text=Olá, gostaria de saber mais sobre o atendimento domiciliar." target="_blank" rel="noopener noreferrer" class="btn" id="cta-hero">FALAR COM A BRUNA NO WHATSAPP</a>
+                </div>
+                <div class="hero-image-wrapper">
+                    <div class="image-placeholder" style="height: 450px;">
+                        <img src="./bruna-bacher-capa.png" alt="Bruna realizando atendimento carinhoso em um Gatinho no sofá da casa do tutor">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dobra 2: Serviços + Diferencial -->
+        <section class="bg-branco">
+            <div class="container">
+                <div class="text-center">
+                    <span class="allura-text">Nossos cuidados</span>
+                    <h2>Serviços e Especialidades</h2>
+                    <p>Tudo o que seu pet precisa, sem o estresse da sala de espera.</p>
+                </div>
+                <div class="servicos-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <article class="card">
+                        <h3>Consulta Clínica</h3>
+                        <p>Avaliação completa no conforto do lar, respeitando o tempo e o histórico de saúde do seu animal.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Vacinação Importada</h3>
+                        <p>Imunização ética e segura (V8/V10, antirrábica e felinas) mantendo a rigorosa cadeia de frio.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Medicina Felina</h3>
+                        <p>Manejo <em>Cat Friendly</em> especializado no território do seu gato, minimizando qualquer estresse.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Lares Multi-Pet</h3>
+                        <p>Check-ups preventivos e práticos para casas com vários cães e gatos em uma única visita.</p>
+                    </article>
+                </div>
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="https://wa.me/5519981166281?text=Olá, gostaria de consultar a disponibilidade para atendimento." target="_blank" rel="noopener noreferrer" class="btn" id="cta-servicos">CONSULTAR DISPONIBILIDADE</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dobra 3: Autoridade e Prova Social -->
+        <section class="bg-bege">
+            <div class="container perfil-container" style="margin-bottom: 4rem;">
+                <div>
+                    <div class="perfil-image">
+                        <div class="image-placeholder" style="border-radius: 0; min-height: 250px;">
+                            <img src="./bruna-bacher-topo.jpeg" alt="Rosto: Bruna sorrindo, visual clean e profissional">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Prazer, eu sou a Bruna.</h2>
+                    <p><strong>Bruna Hergert Bacher</strong> | Médica-Veterinária CRMV-SP 40545</p>
+                    <br>
+                    <p>Com 9 anos de atuação em Limeira, atendimento especializado em clínica médica de cães e gatos e dedico minha carreira a proporcionar saúde com respeito e empatia. Acredito que a ciência aliada ao conforto do lar resulta na melhor experiência para sua família.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dobra 4: SEO e Quebra de Objeção (FAQ e CTA Final) -->
+        <section class="bg-branco">
+            <div class="container text-center" style="margin-bottom: 3rem;">
+                <p><strong>Área de Atuação:</strong> Atendimento veterinário domiciliar exclusivo para toda a cidade de <strong>Limeira/SP</strong>.</p>
+            </div>
+            
+            <div class="container">
+                <h2 class="text-center">Dúvidas Frequentes</h2>
+                <br>
+                <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">Você atende em toda Limeira?</div>
+                        <div class="faq-answer"><p><br>Sim, o atendimento domiciliar cobre toda a área urbana e condomínios da cidade de Limeira/SP.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Como funciona a vacinação em casa?</div>
+                        <div class="faq-answer"><p><br>Seu animal passa por uma avaliação clínica completa. Estando saudável, aplicamos vacinas éticas/importadas, que são transportadas em caixas térmicas rígidas para garantir a eficácia.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">A Bruna atende gatos em domicílio?</div>
+                        <div class="faq-answer"><p><br>Sim! Como especialista em felinos, recomendo fortemente o atendimento em casa para evitar o estresse crônico da caixa de transporte e da clínica tradicional.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-creme cta-final">
+            <div class="container">
+                <h2>Seu pet pode receber cuidado veterinário sem sair de casa.</h2>
+                <p>Fale diretamente comigo no WhatsApp e vamos encontrar o melhor horário.</p>
+                <br>
+                <a href="https://wa.me/5519981166281?text=Olá, quero agendar um atendimento domiciliar." target="_blank" rel="noopener noreferrer" class="btn" id="cta-final">FALAR COM A BRUNA NO WHATSAPP</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+   <footer>
+        <div class="container footer-content">
+            <div class="footer-text" style="text-align: left;">
+                <p><strong>Casa & Afeto - Bruna Hergert Bacher</strong></p>
+                <p>Médica-Veterinária | CRMV-SP 40545 | Limeira/SP</p>
+                <p class="footer-links">
+                    <a href="https://instagram.com/brunabachervet" target="_blank" rel="noopener" style="margin-left: 0;">Instagram (@brunabachervet)</a> | 
+                    <a href="https://wa.me/5519981166281" target="_blank" rel="noopener">WhatsApp</a>
+                </p>
+                <p class="footer-copy" style="font-size: 0.8rem; margin-top: 0.5rem;">© 2026 Bruna Bacher. "Cuidado veterinário no conforto de casa."</p>
+            </div>
+            <a href="#" aria-label="Voltar ao início">
+                <img src="./logo-footer.png" alt="Logo Bruna Bacher Casa e Afeto" class="logo-footer">
+            </a>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5519981166281?text=Olá, estava no site Casa e Afeto e gostaria de tirar uma dúvida." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp" id="cta-flutuante">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-23.2-115-65.1-157zM223.9 414.8c-33.2 0-65.8-8.9-94-25.7l-6.7-4-69.8 18.3L72 334.1l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.8 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <!-- Script Simples para o FAQ (Acordeão) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Fecha todos os outros
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Alterna o atual
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
